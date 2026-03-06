@@ -10,7 +10,7 @@ const TABS = [
   { key: 'weekend', label: 'На выходные' },
 ]
 
-export default function EventsSection({ currentUser, onAuthRequired, showEditProfile = true }) {
+export default function EventsSection({ currentUser, onAuthRequired, showEditProfile = true, showCta = true, onProfileSaved }) {
   const [activeTab, setActiveTab] = useState(null)
   const [recommendations, setRecommendations] = useState([])
   const [profileFilled, setProfileFilled] = useState(false)
@@ -50,6 +50,7 @@ export default function EventsSection({ currentUser, onAuthRequired, showEditPro
       setRecommendations(data)
       setProfileFilled(true)
       setShowForm(false)
+      onProfileSaved?.()
     } catch (e) {
       console.error(e)
     }
@@ -69,7 +70,7 @@ export default function EventsSection({ currentUser, onAuthRequired, showEditPro
 
   return (
     <>
-      {!profileFilled && !showForm && (
+      {showCta && !profileFilled && !showForm && (
         <section style={{ background: '#f8f8f8', borderTop: '1px solid #e0e0e0', borderBottom: '1px solid #e0e0e0', padding: '40px 0' }}>
           <div className="container" role="container">
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>

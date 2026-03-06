@@ -11,14 +11,14 @@ const BASE_CATEGORIES = [
   { key: 'detjam', label: 'Детям', countKey: 'detjam' },
 ]
 
-export default function CategoryMenu({ eventCounts, activeCategory, onCategoryChange }) {
+export default function CategoryMenu({ eventCounts, activeCategory, onCategoryChange, showEmptyPlaceholder = true }) {
   const categories = BASE_CATEGORIES.map(cat => ({
     ...cat,
     count: cat.countKey ? (eventCounts?.[cat.countKey] ?? 0) : 0,
   }))
 
   const activeCat = categories.find(c => c.key === activeCategory)
-  const showEmpty = activeCat && activeCat.count === 0
+  const showEmpty = showEmptyPlaceholder && activeCat && activeCat.count === 0
 
   return (
     <>

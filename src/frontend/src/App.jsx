@@ -15,6 +15,7 @@ export default function App() {
   const [notifications, setNotifications] = useState([])
   const [eventCounts, setEventCounts] = useState({ detjam: 0, total: 0 })
   const [activeCategory, setActiveCategory] = useState('detjam')
+  const [hasProfile, setHasProfile] = useState(false)
 
   useEffect(() => {
     api.me()
@@ -25,6 +26,13 @@ export default function App() {
       .then(setEventCounts)
       .catch(() => {})
   }, [])
+
+  useEffect(() => {
+    if (!currentUser) { setHasProfile(false); return }
+    api.getChildProfile()
+      .then(data => setHasProfile(!!data))
+      .catch(() => setHasProfile(false))
+  }, [currentUser])
 
   const loadNotifications = useCallback(() => {
     api.getNotifications()
@@ -82,9 +90,10 @@ export default function App() {
       </section>
 
       <CategoryMenu
-        eventCounts={eventCounts}
+        eventCounts={currentUser && hasProfile ? eventCounts : { detjam: 0, total: 0 }}
         activeCategory={activeCategory}
         onCategoryChange={setActiveCategory}
+        showEmptyPlaceholder={activeCategory !== 'detjam'}
       />
 
       {(activeCategory === 'detjam' || activeCategory === 'all_classes') && (
@@ -92,6 +101,8 @@ export default function App() {
           currentUser={currentUser}
           onAuthRequired={() => openAuth('login')}
           showEditProfile={activeCategory === 'detjam'}
+          showCta={activeCategory === 'detjam'}
+          onProfileSaved={() => setHasProfile(true)}
         />
       )}
 
