@@ -1,0 +1,131 @@
+.footer-top {
+  font-weight: 400;
+  position: relative;
+  background-color: #252525;
+  color: white;
+  z-index: 1;
+}
+.footer-top a {
+  text-decoration: none;
+  color: inherit;
+}
+.footer-top .container {
+  display: flex;
+  position: relative;
+  gap: 30px;
+  padding: 0 15px;
+}
+.footer-top .container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  line-height: 25px;
+}
+.footer-top .column-1,
+.footer-top .column-2 {
+  width: 50%;
+}
+.footer-top .column-3 {
+  width: 100%;
+}
+.footer-top .column-4 {
+  display: flex;
+}
+.footer-top .column-1,
+.footer-top .column-2,
+.footer-top .column-3 {
+  font-size: 100%;
+  padding: 20px 0;
+}
+.footer-top .logo-et,
+.footer-top .logo-sk {
+  margin: auto;
+  padding-left: 10px;
+}
+.footer-top .logo-et img {
+  height: 60px;
+  display: inline-block;
+}
+.footer-top .logo-sk img {
+  height: 60px;
+  display: inline-block;
+}
+.footer-top .column-3 div {
+  text-transform: uppercase;
+  font-size: 110%;
+  color: #c9c9c9;
+  font-weight: 800;
+}
+.footer-top .container-bottom {
+  background-color: #111111;
+}
+.footer-top .container-bottom div {
+  display: inline-block;
+}
+.footer-top .container-bottom img {
+  height: 30px;
+  opacity: 0.9;
+  transition: 0.5s ease opacity;
+}
+.footer-top .container-bottom img:hover {
+  opacity: 1;
+}
+.footer-top .container-bottom .container {
+  width: 1500px;
+  position: relative;
+  left: 50%;
+  margin-left: -750px;
+}
+.footer-top .social {
+  float: right;
+  padding: 10px 0px;
+}
+.footer-top .license {
+  color: grey;
+  line-height: 30px;
+  padding: 10px 0;
+}
+
+.footer-bottom {
+  font-weight: 400;
+  position: relative;
+  background-color: #111111;
+  color: white;
+  z-index: 1;
+  display: flex;
+}
+.footer-bottom a {
+  text-decoration: none;
+  color: inherit;
+}
+.footer-bottom .container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+.footer-bottom .container div {
+  display: inline-block;
+}
+.footer-bottom .container img {
+  height: 30px;
+  opacity: 0.9;
+  transition: 0.5s ease opacity;
+}
+.footer-bottom .container img:hover {
+  opacity: 1;
+}
+.footer-bottom .container .social {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+}
+.footer-bottom .license {
+  color: grey;
+  line-height: 30px;
+  padding: 10px 0;
+}
+
+

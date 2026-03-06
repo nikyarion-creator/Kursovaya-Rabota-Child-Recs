@@ -1,0 +1,183 @@
+.authorize-fade .authorize {
+  background-color: white;
+  max-width: 350px;
+  margin: auto;
+  position: relative;
+}
+.authorize-fade .authorize .container {
+  padding: 0 20px;
+}
+.authorize-fade .authorize .close-cross-red {
+  width: 20px;
+  height: 20px;
+}
+.authorize-fade .authorize .mail-block,
+.authorize-fade .authorize .social-block,
+.authorize-fade .authorize .phone-block {
+  margin: 10px 0;
+  padding-bottom: 10px;
+  transition: 0.5s ease opacity;
+}
+.authorize-fade .authorize .mail-block.disable,
+.authorize-fade .authorize .social-block.disable,
+.authorize-fade .authorize .phone-block.disable {
+  filter: blur(1px);
+  opacity: 0.3;
+}
+.authorize-fade .authorize .social-block,
+.authorize-fade .authorize .phone-block {
+  border-bottom: 2px solid grey;
+}
+.authorize-fade .authorize .input-with-label {
+  position: relative;
+}
+.authorize-fade .authorize input {
+  width: 100%;
+  padding-left: 10px;
+  text-align: left;
+  -moz-box-sizing: border-box;
+}
+.authorize-fade .authorize .title {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 115%;
+  display: flex;
+  background-color: #ebebeb;
+  padding: 10px 20px 10px 60px;
+  justify-content: space-between;
+}
+.authorize-fade .authorize .title:before {
+  content: "";
+  position: absolute;
+  background: url(../images/et4_auth_black.svg) no-repeat;
+  background-size: cover;
+  width: 23px;
+  height: 23px;
+  left: 20px;
+  top: 8px;
+}
+.authorize-fade .authorize .inputs {
+  padding: 10px 0;
+  position: relative;
+}
+.authorize-fade .authorize .title-social,
+.authorize-fade .authorize .title-mail,
+.authorize-fade .authorize .title-phone {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 90%;
+  padding-bottom: 5px;
+  text-align: center;
+}
+.authorize-fade .authorize .title-social span,
+.authorize-fade .authorize .title-mail span,
+.authorize-fade .authorize .title-phone span {
+  color: #d31f26;
+}
+.authorize-fade .authorize .mail-back,
+.authorize-fade .authorize .phone-back {
+  cursor: pointer;
+  text-align: center;
+  font-size: 100%;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 0;
+  color: var(--et4_red);
+}
+.authorize-fade .authorize .phone-block .description {
+  display: none;
+  text-align: center;
+  height: 37px;
+}
+.authorize-fade .authorize .phone-block .white-red.disable {
+  padding: 11px 5px;
+  text-transform: initial;
+}
+.authorize-fade .authorize .phone-block .code-part .code-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 90%;
+  padding-bottom: 5px;
+  color: #d31f26;
+}
+.authorize-fade .authorize .phone-block .code-part .title-description {
+  text-align: center;
+}
+.authorize-fade .authorize .phone-block .code-part .code-container {
+  display: flex;
+  padding: 15px 0;
+  justify-content: space-between;
+}
+.authorize-fade .authorize .phone-block .code-part .code-container [role=button] {
+  width: 55px;
+}
+.authorize-fade .authorize .phone-block .code-part .code-container input {
+  width: 55px;
+  text-align: center;
+  padding: 0;
+  font-size: 240%;
+  font-weight: 600;
+}
+.authorize-fade .authorize .phone-block .code-part .code-container input::-webkit-outer-spin-button, .authorize-fade .authorize .phone-block .code-part .code-container input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.authorize-fade .authorize .phone-block .phone-describe {
+  padding: 20px 0 0px;
+}
+.authorize-fade .authorize .phone-block .phone-describe span {
+  font-weight: 500;
+}
+.authorize-fade .authorize .mail-block {
+  position: relative;
+}
+.authorize-fade .authorize .mail-block .input-with-label {
+  margin-bottom: 6px;
+}
+.authorize-fade .authorize .mail-block .buttons {
+  width: 100%;
+  bottom: 0;
+}
+.authorize-fade .authorize .social-block a {
+  text-decoration: none;
+}
+.authorize-fade .authorize .social-block img {
+  width: 40px;
+  margin: 0 2px;
+  opacity: 0.9;
+  transition: 0.5s ease opacity;
+}
+.authorize-fade .authorize .social-block img:hover {
+  opacity: 1;
+}
+.authorize-fade .authorize .social-block .link-social {
+  display: flex;
+  justify-content: center;
+}
+.authorize-fade .authorize .service-rules {
+  font-size: 95%;
+  padding-bottom: 10px;
+}
+.authorize-fade .authorize .service-rules a {
+  color: #d31f26;
+}
+@media (max-width: 350px) {
+  .authorize-fade .authorize {
+    width: 100%;
+    top: 0;
+    height: 100%;
+  }
+  .authorize-fade .authorize .container {
+    overflow-y: auto;
+    height: 90%;
+  }
+  .authorize-fade .authorize .container .phone-describe {
+    padding: 5px 0 0px;
+  }
+  .authorize-fade .authorize .container .white-red.disable {
+    font-size: 80%;
+  }
+}
+
+

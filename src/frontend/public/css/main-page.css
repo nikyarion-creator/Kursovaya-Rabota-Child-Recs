@@ -1,0 +1,35 @@
+.special-btn-red {
+        width: 200px;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 1em;
+        background: #ffffff;
+        padding: 10px;
+        color: #d31f26;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5px;
+        text-align: center;
+        border-radius: 8px;
+        transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .special-btn-red:hover {
+        box-shadow: inset 0 0 0 2px #d31f26;
+    }
+
+    .special-btn-red:active {
+        background-color: white;
+        box-shadow: inset 0 0 0 2px #d31f26;
+    }
+
+section.popular-menu .popular-menu-items .menu-item--edit {
+    color: #b05558 !important;
+    border-left: 1px solid #e8e8e8;
+    transition: 0.5s ease background-color, 0.5s ease color !important;
+}
+
+section.popular-menu .popular-menu-items .menu-item--edit:hover {
+    background-color: #b05558 !important;
+    color: #fff !important;
+}

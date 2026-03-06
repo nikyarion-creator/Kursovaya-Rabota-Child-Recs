@@ -1,0 +1,664 @@
+.schema {
+  display: none;
+}
+
+section#welcome {
+  background: transparent;
+  height: 65vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+@media only screen and (max-width: 990px) {
+  section#welcome {
+    height: 45vh;
+  }
+}
+section#welcome section#bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: cover !important;
+}
+section#welcome section#bg video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+section#welcome section#bg:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQYV2NkYGD4z8DAwMgABXAGNgGwSgwVAFbmAgXQdISfAAAAAElFTkSuQmCC) repeat rgba(13, 26, 46, 0.32);
+}
+section#welcome .container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  z-index: 2;
+  position: relative;
+}
+@media only screen and (max-width: 990px) {
+  section#welcome .container {
+    flex-direction: column;
+  }
+}
+section#welcome .container div.welcome {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+@media only screen and (max-width: 990px) {
+  section#welcome .container div.welcome {
+    width: 100%;
+  }
+}
+section#welcome .container div.welcome h1, section#welcome .container div.welcome h2 {
+  color: #ececec;
+  font-size: 2.33rem;
+  font-weight: 800;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 20px 0;
+  padding: 0;
+  pointer-events: none;
+}
+@media only screen and (max-width: 990px) {
+  section#welcome .container div.welcome h1, section#welcome .container div.welcome h2 {
+    font-size: 1.7rem;
+  }
+}
+section#welcome .container div.welcome h1 {
+  margin-bottom: 89px;
+}
+section#welcome .container div.welcome ul.summary {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+}
+section#welcome .container div.welcome ul.summary li {
+  border: 0;
+  padding: 10px 30px;
+  margin: 0 5px;
+  opacity: 0.8;
+  transition: 0.5s ease opacity, 0.5s ease background-color;
+  background-color: rgba(43, 43, 43, 0.5);
+}
+section#welcome .container div.welcome ul.summary li:last-child {
+  background-color: rgba(211, 31, 38, 0.5);
+}
+section#welcome .container div.welcome ul.summary li a {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 600;
+  opacity: 1;
+}
+section#welcome .container div.welcome ul.summary li div {
+  color: #fff;
+  font-weight: 600;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  line-height: 1em;
+}
+section#welcome .container div.welcome ul.summary li div img {
+  display: block;
+  height: 55px;
+  padding: 8px;
+}
+section#welcome .container div.welcome ul.summary li div img.choose {
+  animation: arrowMove 2s ease forwards infinite;
+}
+section#welcome .container div.welcome ul.summary li div span {
+  color: #fff;
+  display: block;
+  font-size: 0.26em;
+  line-height: 1.2em;
+}
+section#welcome .container div.welcome ul.summary li:hover {
+  opacity: 1;
+  background-color: rgba(211, 31, 38, 0.5);
+}
+section#welcome .container div.welcome section.top_events {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  opacity: 0;
+  animation: 1s ease appear forwards;
+  animation-delay: 3.2s;
+}
+@media only screen and (max-width: 990px) {
+  section#welcome .container div.welcome section.top_events {
+    max-width: 100%;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+section#welcome .container div.welcome section.top_events .search-form {
+  width: 100%;
+}
+@media only screen and (max-width: 990px) {
+  section#welcome .container div.welcome section.top_events .search-form {
+    display: none;
+  }
+}
+section#welcome .container div.welcome section.top_events .search-form .searchResults {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  padding: 15px 15px 10px 20px;
+  background-color: rgba(43, 43, 43, 0.95);
+  z-index: 3;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  max-height: 190px;
+}
+section#welcome .container div.welcome section.top_events .search-form .searchResults .not-found {
+  color: var(--et4_red);
+  font-weight: 600;
+  text-transform: uppercase;
+  width: 100%;
+}
+section#welcome .container div.welcome section.top_events .search-form .searchResults ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+}
+section#welcome .container div.welcome section.top_events .search-form .searchResults ul li {
+  margin-bottom: 10px;
+  width: 100%;
+}
+section#welcome .container div.welcome section.top_events .search-form .searchResults ul li a {
+  border-radius: 4px;
+  border: 0;
+  font-size: 1.4em;
+  padding: 0;
+}
+section#welcome .container div.welcome section.top_events .search-form .searchResults ul li a .search-date {
+  background-color: #d31f26;
+  color: #fff;
+  position: relative;
+  padding: 0 5px;
+  border-radius: 4px;
+  margin-right: 6px;
+  font-size: 0.7em;
+  top: -3px;
+}
+section#welcome .container div.welcome section.top_events .search-form .searchResults ul li a h6 {
+  display: inline;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+section#welcome .container div.welcome section.top_events .search-form .searchResults ul li a span {
+  text-transform: uppercase;
+  display: inline;
+  font-size: 1em;
+}
+section#welcome .container div.welcome section.top_events .search-form div {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+section#welcome .container div.welcome section.top_events .search-form div .search_field {
+  width: 100%;
+  position: relative;
+}
+section#welcome .container div.welcome section.top_events .search-form div .search_field input {
+  box-sizing: border-box;
+  width: 100%;
+  background: none;
+  border: 0;
+  border-bottom: 2px solid #fff;
+  box-shadow: none;
+  outline: none;
+  color: #fff;
+  height: 40px;
+  font-size: 1.3rem;
+  line-height: 1em;
+  padding-left: 30px;
+}
+section#welcome .container div.welcome section.top_events .search-form div .search_field input:focus + label, section#welcome .container div.welcome section.top_events .search-form div .search_field input:valid + label {
+  transform: translate(-30px, -90%);
+  font-size: 0.8rem;
+  bottom: 0;
+}
+section#welcome .container div.welcome section.top_events .search-form div .search_field input + label {
+  position: absolute;
+  bottom: 5px;
+  left: 30px;
+  height: 31px;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 400;
+  opacity: 0.8;
+  pointer-events: none;
+  line-height: 1em;
+  transform: translateY(0);
+  transition: 0.5s ease transform;
+}
+section#welcome .container div.welcome section.top_events .search-form div .search_field input ~ svg {
+  position: absolute;
+  left: 0;
+}
+section#welcome .container div.welcome section.top_events .search-form div [type=submit] {
+  height: 30px;
+  background: white;
+  padding: 5px 10px;
+  border: 0;
+  position: absolute;
+  bottom: 0;
+  text-transform: uppercase;
+  right: 0;
+  color: #2b2b2b;
+  font-weight: 400;
+  font-size: 0.8rem;
+  margin: 7px 0;
+  cursor: pointer;
+  opacity: 0.8;
+}
+section#welcome .container div.welcome section.top_events .search-form div [type=submit]:hover {
+  opacity: 1;
+}
+section#welcome .container div.welcome section.top_events ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 2;
+  overflow: hidden;
+}
+@media only screen and (max-width: 990px) {
+  section#welcome .container div.welcome section.top_events ul {
+    flex-wrap: wrap;
+    max-height: 65px;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 990px) {
+  section#welcome .container div.welcome section.top_events ul li {
+    margin-bottom: 15px;
+  }
+}
+section#welcome .container div.welcome section.top_events ul li a {
+  display: block;
+  cursor: pointer;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 7px 15px;
+  opacity: 0.7;
+  margin-right: 12px;
+  transition: 0.5s ease opacity;
+}
+section#welcome .container div.welcome section.top_events ul li a:hover {
+  opacity: 1;
+}
+section#welcome .container div.welcome section.top_events ul li a h6 {
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media only screen and (max-width: 990px) {
+  section#welcome .container div.welcome section.top_events ul li a h6 {
+    font-size: 0.9em;
+  }
+}
+section#welcome .container div.welcome section.top_events ul li a span {
+  color: #fff;
+  font-weight: 400;
+}
+@media only screen and (max-width: 990px) {
+  section#welcome .container div.welcome section.top_events ul li a span {
+    font-size: 0.8em;
+  }
+}
+section#welcome .container div.welcome section.modules {
+  display: none;
+}
+section#welcome .container div.welcome section.modules div.news {
+  display: block;
+  background-color: #2b2b2b;
+  width: 400px;
+  padding: 35px 70px 35px 35px;
+  opacity: 0.2;
+  transition: 0.5s ease opacity;
+}
+section#welcome .container div.welcome section.modules div.news:hover {
+  opacity: 1;
+}
+section#welcome .container div.welcome section.modules div.news h4 {
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+}
+section#welcome .container div.welcome section.modules div.news p {
+  color: #fff;
+  text-align: left;
+}
+
+section.popular-menu {
+  z-index: 1;
+  position: relative;
+  background-color: #FFFFFF;
+  padding: 10px;
+  padding-top: 40px;
+}
+@media only screen and (max-width: 990px) {
+  section.popular-menu .container {
+    max-width: 100%;
+  }
+}
+section.popular-menu .popular-menu-items {
+  margin: 0;
+  position: relative;
+  /*font-size: 0.9rem;*/
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  text-transform: uppercase;
+  width: 100%;
+}
+section.popular-menu .popular-menu-items .menu-item {
+  position: relative;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-right: 1vw;
+  transition: 0.5s ease background-color, 0.5s ease color;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+@media only screen and (max-width: 990px) {
+  section.popular-menu .popular-menu-items .menu-item {
+    padding: 15px 10px;
+  }
+}
+section.popular-menu .popular-menu-items .menu-item.active {
+  background-color: var(--dark);
+  color: #fff;
+}
+section.popular-menu .popular-menu-items .menu-item:focus {
+  outline: none;
+}
+section.popular-menu .popular-menu-items .menu-item:hover {
+  background-color: var(--dark);
+  color: #fff;
+}
+@media only screen and (max-width: 990px) {
+  section.popular-menu .popular-menu-items .menu-item:hover {
+    background-color: inherit;
+    color: inherit;
+  }
+}
+
+.daterangepicker {
+  display: none;
+}
+
+.daterangepicker .btn-success {
+  background: #0a6d0a;
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin-right: 4px;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.daterangepicker .btn-default {
+  background: #d31f26;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.calendar-btn-text {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.not-found-text {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 26px;
+  color: #000000;
+  width: 1200px;
+  margin: 40px auto 200px auto;
+}
+
+.event-calendar-buttons {
+  position: relative;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.5s ease background-color, 0.5s ease color;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.event {
+  padding: 20px 0;
+  background-color: white;
+  position: relative;
+  z-index: 1;
+  min-height: 460px;
+}
+.event .container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.event .event-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  /*justify-content: space-between;*/
+}
+
+.event .event-title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+.event .event-title h2 {
+  font-size: 40px;
+  line-height: 26px;
+  color: #000000;
+}
+.event .event-title p {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  line-height: 22px;
+  color: #000000;
+  font-weight: 400;
+}
+.event .event-title p svg {
+  transform: translateY(3px);
+  margin-left: 10px;
+}
+.event .event-card {
+  margin: 15px 15px 15px 0;
+}
+.event .button-more {
+  text-align: center;
+  margin: 10px 0px;
+  text-transform: uppercase;
+  font-size: 115%;
+  font-weight: 600;
+  color: #d31f26;
+}
+.event .button-more span {
+  cursor: pointer;
+  display: inline-block;
+  animation: scaleMove 1.5s linear forwards infinite;
+}
+
+@media (max-width: 1679px) {
+  .top-teaser {
+    background-size: auto;
+  }
+  .top-teaser .container {
+    width: 1190px;
+    margin-left: -600px;
+  }
+}
+@media (max-width: 1220px) {
+  .top-teaser .container {
+    width: 890px;
+    margin-left: -450px;
+  }
+}
+section.top-category-main-menu {
+  z-index: 1;
+  position: relative;
+  background-color: #FFFFFF;
+  padding: 20px 10px 10px 10px;
+}
+
+@media only screen and (max-width: 990px) {
+  section.top-category-main-menu .container {
+    max-width: 100%;
+  }
+}
+section.top-category-main-menu .top-category-menu-main-items {
+  position: relative;
+  /*font-size: 0.9rem;*/
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+section.top-category-main-menu .top-category-menu-main-items .menu-item {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1vw;
+  transition: 0.5s ease background-color, 0.5s ease color;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 5px 10px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #000000;
+}
+
+section.top-category-main-menu .top-category-menu-main-items .menu-item div {
+  background-color: #ECECEC;
+  padding: 3px 5px;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+@media only screen and (max-width: 990px) {
+  section.top-category-main-menu .top-category-menu-main-items .menu-item {
+    padding: 15px 10px;
+    font-size: 0.9em;
+  }
+}
+section.top-category-main-menu .top-category-menu-main-items .menu-item span {
+  display: inline-block;
+  white-space: nowrap;
+  color: var(--dark);
+}
+
+section.top-category-main-menu .top-category-menu-main-items .menu-item.active {
+  background-color: var(--et4_red);
+  color: #ffffff;
+}
+
+section.top-category-main-menu .top-category-menu-main-items .menu-item.active div {
+  background-color: #8B1116;
+  color: #ffffff;
+}
+
+section.top-category-main-menu .top-category-menu-main-items .menu-item.active span {
+  color: #ffffff;
+}
+
+section.top-category-main-menu .top-category-menu-main-items .menu-item:focus {
+  outline: none;
+}
+
+section.top-category-main-menu .top-category-menu-main-items .menu-item:hover {
+  background-color: var(--dark);
+  color: #fff;
+}
+
+section.top-category-main-menu .top-category-menu-main-items .menu-item:hover span {
+  color: #fff;
+}
+
+section.top-category-main-menu .top-category-menu-main-items .menu-item:hover div {
+  background-color: #ECECEC;
+  color: #000000;
+}
+
+@media only screen and (max-width: 990px) {
+  section.top-category-main-menu .top-category-menu-main-items .menu-item:hover {
+    background-color: inherit;
+    color: inherit;
+  }
+}
+
+

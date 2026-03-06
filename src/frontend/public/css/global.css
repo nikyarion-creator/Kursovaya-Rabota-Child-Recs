@@ -1,0 +1,210 @@
+:root {
+  --et4_red: #d31f26;
+  --grey_lightest: #f6f6f6;
+  --grey_light: #ebebeb;
+  --grey_dark: #d7d7d7;
+  --grey_darkest: #959595;
+  --dark: #2b2b2b;
+  --green: #3cb879;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+html {
+  overflow: auto;
+}
+html.noOverflow {
+  overflow: hidden !important;
+}
+
+strong,
+h2,
+b {
+  margin: 0;
+  font-weight: 600;
+}
+
+body {
+  background: #fff;
+  height: 100%;
+  overflow-x: hidden;
+}
+*,
+*:after,
+*::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+}
+
+p {
+  margin: 0 0 1em;
+  line-height: 1.3em;
+}
+
+body, input, button {
+  font-family: "Futura PT";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+body.offset {
+  margin-top: 41px;
+}
+
+button {
+  border: none;
+}
+
+html, body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--et4_red) #ffffff;
+}
+
+body > iframe, iframe[name=google_conversion_frame] {
+  position: absolute;
+  z-index: -1;
+}
+
+label {
+  pointer-events: none;
+}
+
+[role=container] {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+[role=container_mobile] {
+  padding: 0 15px;
+}
+[role=container_mobile] [role=container_abs] {
+  position: absolute;
+  left: -15px;
+  right: -15px;
+  padding: 0 15px;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--et4_red);
+}
+
+.preloader-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+}
+.preloader-container .preloader {
+  background: url(../images/preloader.gif) no-repeat;
+  background-size: 30px;
+  width: 30px;
+  height: 30px;
+  margin: auto;
+}
+
+@keyframes arrowMove {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(3px);
+  }
+  75% {
+    transform: translateX(-3px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes scaleMove {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@media only screen and (max-width: 1679px) {
+  [role=container] {
+    width: 1200px;
+  }
+}
+@media only screen and (max-width: 1220px) {
+  [role=container] {
+    width: 900px;
+  }
+}
+.cookie-popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #252525;
+  display: flex;
+  z-index: 9999;
+  padding: 10px 80px 15px 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.cookie-popup.mobile {
+  position: sticky;
+}
+.cookie-popup.mobile .cookie-desc {
+  margin-bottom: 12px;
+}
+.cookie-popup .cookie-desc {
+  color: white;
+}
+.cookie-popup #accept_cookie {
+  height: 30px;
+  font-size: 14px;
+  text-transform: initial;
+}
+
+

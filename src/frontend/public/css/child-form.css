@@ -1,0 +1,159 @@
+/* ===== Inline Child Form ===== */
+
+#child-form-section {
+    background: #f8f8f8;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 40px 0;
+}
+
+.child-form-inline {
+    max-width: 860px;
+}
+
+.child-form-inline h2 {
+    font-size: 1.6em;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #111;
+}
+
+.child-form-desc {
+    color: #666;
+    margin-bottom: 28px;
+    font-size: 0.95em;
+}
+
+.child-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 32px;
+    margin-bottom: 28px;
+    align-items: start;
+}
+
+.child-form-grid .input-with-label {
+    position: relative;
+}
+
+.child-form-grid .field-grey {
+    width: 100%;
+    padding: 14px 12px 4px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    background: #fff;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.child-form-grid .field-grey:focus {
+    border-color: #d31f26;
+}
+
+.child-form-grid .input-with-label label {
+    position: absolute;
+    top: 50%;
+    left: 13px;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 0.9em;
+    pointer-events: none;
+    transition: all 0.15s ease;
+}
+
+.child-form-grid .field-grey:focus ~ label,
+.child-form-grid .field-grey:not(:placeholder-shown) ~ label {
+    top: 6px;
+    font-size: 0.72em;
+    color: #d31f26;
+    transform: none;
+}
+
+/* Пол */
+.gender-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.gender-label {
+    font-size: 0.85em;
+    color: #999;
+}
+
+.gender-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.gender-btn {
+    padding: 8px 24px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.gender-btn.active,
+.gender-btn:hover {
+    background: #d31f26;
+    color: #fff;
+    border-color: #d31f26;
+}
+
+/* Кнопка отправки */
+.child-form-actions {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.child-form-actions .white-red {
+    padding: 12px 40px;
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+/* Экран успеха */
+.child-form-success {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.child-form-success h3 {
+    font-size: 1.5em;
+    color: #111;
+    margin-bottom: 12px;
+}
+
+.child-form-success p {
+    color: #555;
+    margin-bottom: 24px;
+}
+
+.child-form-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #eee;
+    border-top-color: #d31f26;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Адаптив */
+@media (max-width: 600px) {
+    .child-form-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,252 @@
+.schema {
+  display: none !important;
+}
+
+.calendar-btn-text {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.event-card {
+  position: relative;
+  background-color: white;
+  width: 285px;
+  box-shadow: 1px 1px 6px -1px #9d9c9c;
+  margin: 10px 10px 10px 0;
+  z-index: 1;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: 0.5s ease opacity, 0.5s ease box-shadow;
+  border-radius: 12px;
+}
+.event-card a {
+  display: block;
+}
+.event-card a:hover {
+  opacity: 1;
+}
+.event-card[device=device]:hover {
+  opacity: 1;
+  box-shadow: 1px 1px 10px 2px #b7b7b7;
+}
+.event-card[device=device]:hover h5 {
+  color: var(--et4_red);
+  -webkit-font-smoothing: antialiased;
+}
+.event-card[device=device]:hover .poster {
+  filter: grayscale(0%);
+}
+.event-card[device=device]:hover .poster .price {
+  background-color: var(--et4_red);
+  opacity: 1;
+}
+.event-card[device=device]:hover .poster .price .arrow img {
+  animation: arrowMove 2s linear forwards infinite;
+}
+.event-card[device=device]:hover .statistic, .event-card[device=device]:hover details {
+  opacity: 1;
+}
+.event-card section.category {
+  padding: 10px 10px 0 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.event-card section.category .tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+}
+.event-card section.category .tags .type {
+  margin-right: 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 90px;
+  overflow: hidden;
+}
+.event-card section.category .age {
+  font-size: 24px;
+  font-weight: 600;
+}
+.event-card h5 {
+  display: block;
+  color: var(--dark);
+  transition: 0.5s ease color;
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 1.2em;
+  height: auto;
+  font-size: 1.1em;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+}
+.event-card .poster-info {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.event-card section.poster {
+  background-size: cover;
+  background-position: 50% 50%;
+  display: block;
+  height: 150px;
+  position: relative;
+  filter: grayscale(30%);
+  transition: 0.5s ease filter;
+  border-radius: 12px;
+}
+.event-card section.poster .price {
+  border-radius: 5px;
+  position: absolute;
+  right: 5px;
+  bottom: 12px;
+  background-color: #212121;
+  color: #fff;
+  padding: 2px 10px;
+  transition: 0.5s ease padding, 0.5s ease background-color, 1s ease opacity;
+  font-weight: 400;
+  line-height: 1.2em;
+  font-size: 1em;
+  opacity: 1;
+  display: flex;
+  flex-direction: row;
+}
+@media only screen and (max-width: 990px) {
+  .event-card section.poster .price {
+    background-color: var(--et4_red);
+  }
+}
+.event-card section.poster .price div.text {
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.event-card section.poster .price div.text span {
+  font-weight: 600;
+  color: #fff;
+  font-size: 1.3em;
+}
+.event-card section.poster .price .arrow {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding-left: 15px;
+}
+.event-card section.poster .price .arrow img {
+  height: 15px;
+  transform: translateX(0px);
+}
+.event-card section.statistic {
+  display: flex;
+  background-color: white;
+  text-transform: uppercase;
+  padding: 10px;
+  position: relative;
+  transition: 0.5s ease opacity;
+  opacity: 0.9;
+}
+.event-card section.statistic .cell {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.event-card section.statistic .cell:hover .counter {
+  background: var(--et4_red);
+  color: white;
+}
+.event-card section.statistic .cell .counter {
+  width: auto;
+  height: 30px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--grey_light);
+  transition: 0.5s ease background-color;
+  color: var(--dark);
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+.event-card section.statistic .cell label {
+  position: relative;
+  color: black;
+  font-size: 1.1em;
+  line-height: 1.2em;
+  font-weight: 500;
+}
+.event-card section.details {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px 10px 10px;
+  transition: 0.5s ease opacity;
+  transition-delay: 0.5s;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+}
+.event-card section.details .cell {
+  width: 100%;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  padding: 5px 0 5px 0;
+  font-weight: 500;
+  background-size: 15px;
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+.event-card section.details .cell.date span {
+  display: inline-block;
+  margin-right: 1px;
+}
+.event-card section.details .cell.date .reminder {
+  display: none;
+  width: 13px;
+  height: 13px;
+  background: #ebebeb url(../images/et4_reminder_black.svg) no-repeat 3px;
+  background-size: 13px;
+  padding: 3px;
+  border-radius: 100%;
+  position: absolute;
+  top: 13px;
+  margin-left: 10px;
+}
+.event-card section.details .cell.place span:after {
+  content: ",";
+}
+.event-card section.details .cell.place span:last-child:after {
+  content: " ";
+}
+.event-card[device=device_mobile] {
+  flex: 0 0 100%;
+  max-width: 100%;
+  box-shadow: none;
+  opacity: 1;
+  margin: 0 auto 10px;
+  font-size: 1rem;
+}
+.event-card[device=device_mobile] .content {
+  box-shadow: 1px 1px 8px -1px #b1b1b1;
+  transition: 0.5s ease box-shadow;
+  box-sizing: border-box;
+  border-radius: 6px;
+  max-width: 340px;
+  margin: 0 auto;
+}
+.event-card[device=device_mobile] .content a {
+  display: block;
+  opacity: 1;
+}
+.event-card[device=device_mobile] .content .price {
+  background-color: var(--et4_red);
+}
+
+

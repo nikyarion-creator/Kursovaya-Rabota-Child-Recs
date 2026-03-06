@@ -1,0 +1,395 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  min-height: 60px;
+  padding-right: 10px;
+  /**************************HEAD BUTTON *******************************/
+}
+.header .container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px;
+  color: white;
+}
+.header .cell {
+  display: flex;
+}
+.header .cell:last-child {
+  padding-right: 15px;
+}
+.header .logo {
+  padding: 0 30px;
+}
+.header .logo a {
+  text-decoration: none;
+}
+.header .logo .logo-et4 {
+  background: url(../images/et4_logo_wt.svg) no-repeat;
+  width: 100px;
+}
+.header .logo .logo-et4.trade {
+  background: url(../images/et4_logo_rt_white.svg) no-repeat;
+}
+.header .logo .logo-sk {
+  background: url(../images/sk.png) no-repeat;
+  width: 55px;
+  margin-left: 15px;
+}
+.header .logo .logo-et4,
+.header .logo .logo-sk {
+  display: inline-block;
+  background-size: contain;
+  height: 40px;
+}
+.header #sell-tickets {
+  display: none;
+}
+.header .search {
+  display: none;
+  height: 40px;
+  border-radius: 4px;
+  position: relative;
+}
+.header .search .search-button {
+  min-width: 50px;
+  cursor: pointer;
+  background: #d7d7d7 url(../images/et4_magnify_red.svg) no-repeat 50%;
+  background-size: 20px;
+  border-radius: 0 4px 4px 0;
+}
+.header .search .search-button.blink {
+  animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0.5;
+  }
+}
+.header .search .search-result {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 100%;
+  background-color: #f7f7f7;
+  max-height: 130px;
+  overflow-y: auto;
+  border-radius: 0px 0px 4px 4px;
+}
+.header .search .search-result .result-row {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-bottom: 1px solid #b5b5b5;
+  margin-top: 10px;
+  padding-bottom: 5px;
+}
+.header .search .search-result .result-row a {
+  text-decoration: none;
+}
+.header .search .search-result .result-row:last-child {
+  border: none;
+}
+.header .search .search-result .result-container {
+  padding: 10px 20px;
+}
+.header .search .search-result .result-header {
+  font-weight: 500;
+  color: #d31f26;
+  font-size: 90%;
+}
+.header .search .search-result .result-name {
+  color: black;
+  font-weight: 600;
+}
+.header .search .search-result .search_keyword {
+  background-color: yellow;
+}
+.header .search input {
+  padding-left: 20px;
+  font-weight: 500;
+  font-size: 110%;
+  width: 300px;
+  height: 100%;
+  border: none;
+  background-color: #ebebeb;
+  border-radius: 4px 0 0 4px;
+}
+.header .authorized,
+.header .authorization,
+.header .lang,
+.header .location {
+  line-height: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.header .authorized,
+.header .authorization {
+  cursor: pointer;
+  position: relative;
+  padding-left: 25px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 150px;
+  text-align: right;
+  white-space: nowrap;
+}
+.header .authorized:before,
+.header .authorization:before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  left: 0;
+  top: 8px;
+  background: url(../images/et4_auth_white.svg) no-repeat;
+}
+.header .lang:after,
+.header .location:after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 10px;
+  height: 6px;
+  right: 15px;
+  top: 17px;
+  background: url(../images/et4_arrow_down_white.svg) no-repeat;
+}
+.header .lang,
+.header .location {
+  position: relative;
+  padding: 0 30px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.header .lang a {
+  color: #ffffff;
+}
+.header .lang::after {
+  display: none !important;
+}
+.header.white {
+  background-color: white;
+}
+.header.white .container {
+  color: black;
+}
+.header.white .lang a {
+  color: #000000 !important;
+}
+.header.white .lang::after {
+  display: none;
+}
+.header.white .logo .logo-et4 {
+  background: url(../images/et4_logo_black.svg) no-repeat;
+  background-size: contain;
+}
+.header.white .logo .logo-et4.trade {
+  background: url(../images/et4_logo_rt.svg) no-repeat;
+}
+.header.white .search {
+  display: flex;
+}
+.header.white #sell-tickets {
+  display: flex;
+  font-size: 0.8rem;
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.header.white .authorized:before,
+.header.white .authorization:before {
+  content: "";
+  background: url(../images/et4_auth.svg) no-repeat;
+}
+.header.white .lang:after,
+.header.white .location:after {
+  content: "";
+  background: url(../images/et4_arrow_down_black.svg) no-repeat;
+}
+.header .menu-popup {
+  position: relative;
+  background-color: #f8f8f8;
+  display: none;
+  z-index: 2;
+  font-weight: 500;
+  padding: 30px 0;
+}
+.header .menu-popup .popup-container {
+  display: flex;
+}
+.header .menu-popup .popup-container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1.7em;
+  font-size: 110%;
+}
+.header .menu-popup .popup-container a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.5s ease color;
+}
+.header .menu-popup .popup-container a:hover {
+  color: var(--et4_red);
+}
+.header .menu-popup .column {
+  width: 100%;
+}
+.header .menu-popup .column:first-child {
+  min-width: 273px;
+  width: initial;
+}
+.header .menu-popup .column:last-child {
+  justify-content: flex-end;
+  width: initial;
+  padding-right: 10px;
+}
+.header .menu-popup .column .social {
+  padding: 10px 0px;
+  min-width: 135px;
+}
+.header .menu-popup .column li {
+  margin-bottom: 5px;
+}
+.header .menu-popup .column div:first-child,
+.header .menu-popup .column li:first-child {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #b5b5b5;
+}
+.header .menu-popup .column .social div {
+  display: inline-block;
+}
+.header .menu-popup .column .social img {
+  height: 30px;
+  opacity: 0.9;
+  transition: 0.5s ease opacity;
+}
+.header .menu-popup .column .social img:hover {
+  opacity: 1;
+}
+.header .button {
+  cursor: pointer;
+  background: none;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  padding: 5px 0;
+  outline: 0;
+  margin-top: 5px;
+}
+.header .button em {
+  font-style: normal;
+  position: relative;
+  height: 100%;
+  transition: 0.5s ease opacity;
+  display: block;
+  opacity: 0.9;
+  width: 100%;
+}
+.header .button em:hover {
+  opacity: 1;
+}
+.header .button span {
+  border-radius: 4px;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  background-color: #d31f26;
+  transition: 0.5s all ease;
+}
+.header .button .top {
+  top: 0;
+}
+.header .button .mid {
+  top: 8px;
+}
+.header .button .btm {
+  bottom: 0;
+}
+.header .button.active .top {
+  transform: rotate(45deg) translate3d(1px, 7px, 0);
+}
+.header .button.active .mid {
+  transform: rotate(-45deg) translate3d(-1px, -4px, 0);
+}
+.header .button.active .btm {
+  display: none;
+}
+@media (max-width: 1220px) {
+  .header .lang,
+  .header .location {
+    padding: 0 25px 0 5px;
+    margin: 0;
+  }
+  .header .logo {
+    padding: 0 10px;
+  }
+  .header .search input {
+    width: 200px;
+  }
+  .header .lang:after,
+  .header .location:after {
+    content: "";
+    right: 10px;
+  }
+}
+
+.menu-city .container {
+  width: 300px;
+  min-height: 300px;
+}
+
+section.profile-menu {
+  position: fixed;
+  top: 50px;
+  background-color: white;
+  z-index: 6;
+  border-radius: 4px;
+  box-shadow: 1px 1px 6px -1px #9d9c9c;
+}
+section.profile-menu .container {
+  padding: 15px;
+}
+section.profile-menu .container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+section.profile-menu .container ul li {
+  padding: 2px 0;
+}
+section.profile-menu .container ul li a {
+  display: flex;
+  opacity: 0.85;
+  transition: 0.5s ease opacity;
+}
+section.profile-menu .container ul li a img {
+  height: 20px;
+  margin: auto 0;
+}
+section.profile-menu .container ul li a div:first-child {
+  width: 45px;
+}
+section.profile-menu .container ul li a .text {
+  margin: auto 0;
+  font-size: 100%;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: 0.5s ease color;
+}
+section.profile-menu .container ul li a:hover {
+  opacity: 1;
+}
+section.profile-menu .container ul li a:hover .text {
+  color: var(--et4_red);
+}
+
+

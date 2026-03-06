@@ -1,0 +1,72 @@
+.service-info {
+  position: relative;
+  background-color: #ebebeb;
+  z-index: 1;
+}
+.service-info .container {
+  padding: 10px 0 0;
+  position: relative;
+}
+.service-info .top-row {
+  margin: 20px 0;
+}
+.service-info .block {
+  text-align: center;
+  font-size: 165%;
+}
+.service-info .block b {
+  font-weight: 600;
+}
+.service-info .link-red {
+  color: var(--et4_red);
+  text-transform: uppercase;
+  font-size: 50%;
+  font-weight: 700;
+  letter-spacing: -1px;
+  text-decoration: underline;
+}
+.service-info .bottom-row {
+  display: flex;
+  justify-content: center;
+}
+.service-info .cell {
+  width: 33%;
+  text-align: center;
+}
+.service-info .text-big-grey {
+  font-size: 240%;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #b5b5b5;
+}
+.service-info .text-red {
+  font-size: 125%;
+  color: var(--et4_red);
+  font-weight: 600;
+}
+.service-info .text-black {
+  font-size: 115%;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+.service-info .background {
+  width: 100%;
+  height: 230px;
+  background: url(../images/et4_smartphone.jpg) no-repeat 50% 10px;
+  background-size: 250px;
+}
+.service-info .text {
+  width: 100%;
+  color: white;
+  font-size: 130%;
+  line-height: 30px;
+}
+.service-info .text span {
+  font-weight: 800;
+}
+.service-info .transparent {
+  width: 250px;
+  margin: 0 auto;
+}
+
+

@@ -1,0 +1,28 @@
+.registration {
+  background-color: var(--et4_red);
+  position: relative;
+  z-index: 1;
+}
+.registration .container {
+  display: flex;
+  position: relative;
+  padding: 20px 0;
+}
+.registration .text {
+  width: 100%;
+  color: white;
+  font-size: 130%;
+  line-height: 40px;
+}
+.registration .text span {
+  font-weight: 800;
+}
+.registration .button {
+  width: 50%;
+}
+.registration .button .red-grey {
+  width: 250px;
+  position: relative;
+}
+
+
